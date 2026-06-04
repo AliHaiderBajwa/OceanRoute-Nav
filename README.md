@@ -10,18 +10,14 @@
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Academic-blue?style=for-the-badge)
 
-*An intelligent maritime route visualization system that maps and optimizes cargo ship paths between international ports — built entirely with custom data structures, no STL allowed.*
+*An intelligent maritime route visualization system that maps and optimizes cargo ship paths between international ports - built entirely with custom data structures, no STL allowed.*
 
 </div>
 
 ---
 
 ## 👥 Team
-
-| Name | Roll Number | Section |
-|---|---|---|
-| Ali Haider Bajwa | 24i-3102 | SE-C |
-| Ermish | 24i-3180 | SE-C |
+| Ali Haider Bajwa | Ermish |
 
 **Course:** Data Structures &nbsp;|&nbsp; **FAST-NUCES, Islamabad**
 
@@ -29,9 +25,9 @@
 
 ## 📌 Overview
 
-**OceanRoute Nav** is a fully interactive maritime navigation system rendered on a real world map using **SFML**. It ingests two data files — `Routes.txt` (sea routes) and `ports.txt` (port coordinates) — builds a live **adjacency-list graph**, and lets users find optimal shipping paths, manage multi-leg voyages, filter by preferences, and visualize docking queues.
+**OceanRoute Nav** is a fully interactive maritime navigation system rendered on a real world map using **SFML**. It ingests two data files - `Routes.txt` (sea routes) and `ports.txt` (port coordinates) - builds a live **adjacency-list graph**, and lets users find optimal shipping paths, manage multi-leg voyages, filter by preferences, and visualize docking queues.
 
-Every data structure in this project — graphs, heaps, queues, linked lists — is **implemented from scratch** with no STL containers whatsoever.
+Every data structure in this project - graphs, heaps, queues, linked lists - is **implemented from scratch** with no STL containers whatsoever.
 
 ---
 
@@ -47,7 +43,7 @@ Every data structure in this project — graphs, heaps, queues, linked lists —
 - **Dijkstra's Algorithm** with a custom **Min-Heap (Priority Queue)** for efficient node relaxation
 - Computes both the **cheapest path** (minimise cost) and **fastest path** (minimise voyage time) simultaneously
 - Optimal path highlighted in real-time on the map; ports light up as the algorithm explores them
-- Handles connecting routes respecting **actual departure/arrival times** — a connection is only valid if the next ship departs after the previous one arrives
+- Handles connecting routes respecting **actual departure/arrival times** - a connection is only valid if the next ship departs after the previous one arrives
 
 ### 📦 Ship Route Booking
 - Select origin and destination port by clicking on the map
@@ -68,9 +64,9 @@ Every data structure in this project — graphs, heaps, queues, linked lists —
 
 ### 🎛 Custom Ship Preferences / Filtering
 - Filter routes by **preferred shipping company** (Maersk, MSC, Evergreen, COSCO, ZIM, etc.)
-- **Avoid specific ports** — excluded ports fade out on the map
+- **Avoid specific ports** - excluded ports fade out on the map
 - Set a **maximum voyage time** cap; routes exceeding it are hidden
-- Subgraph generated dynamically — irrelevant ports greyed out, matching routes highlighted
+- Subgraph generated dynamically - irrelevant ports greyed out, matching routes highlighted
 - Reset all filters with one keypress
 
 ---
@@ -80,7 +76,7 @@ Every data structure in this project — graphs, heaps, queues, linked lists —
 | Structure | Custom Implementation | Used For |
 |---|---|---|
 | **Adjacency-List Graph** | `struct Graph` + `struct Port` + `struct Edge` | Core route network (ports = vertices, routes = edges) |
-| **Min-Heap (Priority Queue)** | `struct MinHeap` + `struct HeapNode` | Dijkstra's algorithm — O(E log V) route finding |
+| **Min-Heap (Priority Queue)** | `struct MinHeap` + `struct HeapNode` | Dijkstra's algorithm - O(E log V) route finding |
 | **Singly Linked List** | `struct SimpleLinkedList` + `struct LNode` | Multi-leg journey builder |
 | **Linked Queue (FIFO)** | `struct LinkedQueue` + `struct QNode` | Port docking management |
 | **Dynamic Array** | `struct RouteArray` | Parsed route records before graph build |
@@ -112,7 +108,7 @@ main()
 
 ```
 oceanroute-nav/
-├── i243180_i243102_C.cpp   # Full source — C++ implementation
+├── i243180_i243102_C.cpp   # Full source - C++ implementation
 ├── Routes.txt              # Sea route dataset (origin, dest, date, times, cost, company)
 ├── ports.txt               # Port list for graph vertex pre-seeding
 ├── worldmap.png            # Background world map (SFML texture)
@@ -157,7 +153,7 @@ Dubai     Athens   10/12/2024  09:00  22:00  7800  MaerskLine
 > Arrival before departure implies an overnight voyage (next-day arrival handled automatically).
 
 ### `ports.txt`
-One port name per line — pre-seeds graph vertices before route edges are added.
+One port name per line - pre-seeds graph vertices before route edges are added.
 
 ---
 
